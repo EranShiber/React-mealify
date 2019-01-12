@@ -10,6 +10,7 @@ const Input = (props) => {
             onChange={props.hendleInputChange}
              className="main-input"
               placeholder="Search any meal..."
+              autoComplete="off"
                name="meal" />  
 
             <input type="submit"
