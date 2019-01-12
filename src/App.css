@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 15px;
+  font-family: 'Josefin Sans', cursive;
+  font-size: 20px;
+}
+
+.main-header {
+font-size: 2rem;
+position: relative;
+height: 25rem;
+background-repeat: no-repeat;
+background-position: bottom;
+background-size: cover;
+background-image: linear-gradient(to bottom right, rgb(228, 187, 99), rgba(172, 69, 0, 0.5)),url("https://www.mcdonalds.com/content/dam/usa/promotions/HP_hero/hh-bts-d.jpg");
+clip-path: polygon(0 0, 100% 0%, 100% 70%, 0% 100%);
+}
+
+
+.logo {
+  display: block;
+  font-size: 30px;
+  padding: 15px;
+}
+
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav ul a {
+  text-decoration: none;
+  color: white;
+}
+.main-nav li:last-child {
+  padding-right: 20%;
+}
+
+.icon{
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px;
+}
+
+.main-icon {
+  position: absolute;
+  top: 30%;
+  left: 1%;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.icon span::after {
+  content: "";
+  height: 0.5rem;
+ 
+}
+
+.main-icon{
+display: flex;
+border: none;
+border-radius: 5px;
+}
+
+.icon span {
+  border-bottom: 3px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+}
+.main-form{
+  margin-top: 5%;
+  text-align: center;
+}
+
+
+.main-form .main-input{
+  font-family: 'Josefin Sans', cursive;
+  text-align: center;
+  font-size: 120%;
+  width: 80vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  position: relative;
+  display: inline-block;
+ 
+}
+
+
+.main-form .main-btn {
+  border: none;
+  height: 4.5vh;
+  width: 3vw;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  transition: all .4s ease;
+}
+
+.main-form .main-btn:hover {
+  background: linear-gradient(to bottom right, rgb(228, 187, 99), rgba(172, 69, 0, 0.5));
+  color: white;
+}
+
+
+/* MAIN ITEMS STYLES */
+
+.container-box {
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.recipe-box{
+  display: flex;
+  background-image: url('http://static.food2fork.com/Bacon2BWrapped2BJalapeno2BPopper2BStuffed2BChicken2B5002B5909939b0e65.jpg');
+  margin: 2rem auto;
+  height: 20rem;
+  width: 20rem;
+  background-color: #ccc;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  justify-content: space-around;
+  flex-direction: column;
+  transition: all 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.recipe-box > h4 {
+flex-basis: 1;
+align-self:center;
+
+}
+
+.recipe-box p {
+  flex-basis: 0;
+  align-self:center;
+}
+
+.flip {
+  display: none;
+}
+
+.backside {
+  transform: rotateY(180deg);
+  position: absolute;
+ display: none;
+ height: 100%;
+ width: 100%;
+ background:  #c9c9c9;
+ margin: auto;
+ border-radius: 20px;
+}
+
+.recipe-box:hover .backside{
+ display: block;
+}
+
+.recipe-box:hover {
+  transform: rotateY(180deg);
+}
