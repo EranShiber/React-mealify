@@ -4,9 +4,11 @@ import Nav from './Layouts/Nav'
 import Input from './Components/Input';
 import RecipeBox from './Components/RecipeBox';
 
+
 class App extends Component {
   state = {
     recipe: [],
+    userLikes: [],
     userType: ''
   }
 
@@ -15,9 +17,23 @@ class App extends Component {
     this.setState({ userType: e.target.value })
   }
 
+
+hendleLikedRecipe = (id) => {
+  const likedArr = this.state.recipe.filter(x=> {
+     return x.recipe_id === id
+  })
+this.setState(oldState => {
+  let likedRecipe = oldState.userLikes;
+  likedRecipe.push(...likedArr);
+  this.setState({userLikes: [...likedRecipe]})
+})
+}
+
+
+
   hendleSearch = (e) => {
     e.preventDefault()
-    fetch(`https://www.food2fork.com/api/search?key=70a8a94c451997b41e73942391e371f5&q=${this.state.userType}`)
+    fetch(`https://www.food2fork.com/api/search?key=36d8a730466c68aaab341345469f3a33&q=${this.state.userType}`)
       .then(res => res.json())
       .then((data) => {
         this.setState(oldState => {
@@ -36,9 +52,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav userLikes={this.state.userLikes}/>
         <Input hendleSearch={this.hendleSearch} hendleInputChange={this.hendleInputChange} />
-        <RecipeBox recipe={this.state.recipe} />
+        <RecipeBox recipe={this.state.recipe} hendleLikedRecipe={this.hendleLikedRecipe} userLikes={this.state.userLikes} />
       </div>
     );
   }

@@ -12,7 +12,7 @@ const Input = (props) => {
               placeholder="Search any meal..."
               autoComplete="off"
                name="meal" />  
-
+               
             <input type="submit"
              className="main-btn" 
              value="Go" />

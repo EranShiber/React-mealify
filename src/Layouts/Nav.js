@@ -4,6 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
     render() {
+        
+        const newTo = {
+            pathname: 'likes',
+            state: this.props.userLikes
+        }
         return (
             <nav className="main-nav">
                 <header className="main-header">
@@ -17,17 +22,17 @@ class Nav extends Component {
                                 </div>
                             </button>
                             <div className="logo">
-                                <a href="#">LOGO</a>
+                                <NavLink to="/">LOGO</NavLink>
                             </div>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <NavLink to={newTo}>Likes</NavLink>
                         </li>
                         <li>
-                            <a href="#">Services</a>
+                            <NavLink to="#">Services</NavLink>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <NavLink to="#">Contact</NavLink>
                         </li>
                     </ul>
                 </header>
