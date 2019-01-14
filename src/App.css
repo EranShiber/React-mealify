@@ -142,7 +142,7 @@ border-radius: 5px;
   text-align: center;
   justify-content: space-around;
   flex-direction: column;
-  transition: all 0.2s;
+  transition: all 0.1s;
   transform-style: preserve-3d;
   position: relative;
   animation: boxShower 1s ease-in;
@@ -186,7 +186,6 @@ position: absolute;
  width: 100%;
  background: linear-gradient(to right top, rgb(228, 187, 99), #ccc); 
  border-radius: 20px;
- display: flex;
 }
 
 

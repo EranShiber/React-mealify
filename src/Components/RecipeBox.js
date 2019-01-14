@@ -17,9 +17,9 @@ const RecipeBox = (props) => {
                     return <div className="recipe-box" style={{ backgroundImage: `url(${x.image_url})` }}>
                         <h4>{x.title}</h4>
                         <p>{x.social_rank}</p>
-                        <div className="backside">   
-                                <Link className="view-recipe" to={newTo}>View Recipe </Link>
-                                  <button onClick={() =>{props.hendleLikedRecipe(x.recipe_id)}} className="like-btn">Add to favorite</button>             
+                        <div className="backside">
+                            <Link className="view-recipe" to={newTo}>View Recipe </Link>
+                            <button onClick={() => { props.hendleLikedRecipe(x.recipe_id) }} className="like-btn">Add to favorite</button>
                         </div>
                     </div>
                 })}
