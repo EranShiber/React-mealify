@@ -1,7 +1,8 @@
 {
   "name": "react-fridgify",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "http://eranshiber.github.io/react-mealify/",
+  "private": false,
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
