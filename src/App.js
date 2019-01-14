@@ -12,6 +12,21 @@ class App extends Component {
     userType: ''
   }
 
+  componentDidMount() {
+   if ( JSON.parse(localStorage.getItem("recipe")) > '') {
+    this.setState({recipe: JSON.parse(localStorage.getItem("recipe"))})  
+   }    
+   if ( JSON.parse(localStorage.getItem("userRecipe")) > '' ) {
+     this.setState({userLikes: JSON.parse(localStorage.getItem("userRecipe")) })
+   }
+  }
+
+  componentDidUpdate() {
+    let userRecipes = JSON.stringify(this.state.recipe);
+    let userLikes = JSON.stringify(this.state.userLikes)
+    localStorage.setItem("recipe", userRecipes)
+    localStorage.setItem("userRecipe", userLikes)
+  }
 
   hendleInputChange = (e) => {
     this.setState({ userType: e.target.value })
@@ -50,6 +65,7 @@ this.setState(oldState => {
 
 
   render() {
+  
     return (
       <div>
         <Nav userLikes={this.state.userLikes}/>
