@@ -7,7 +7,7 @@ import LikedList from './LikedList';
 class Router extends React.Component{
     render(){
     return(
-        <BrowserRouter>
+        <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
         <Switch >
             <Route path="/" component={App} exact />
             <Route path="/recipe/:id" component={Recipe} />
